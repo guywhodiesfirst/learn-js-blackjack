@@ -25,6 +25,7 @@ let dealerObj = {
 }
 
 function startGame() {
+    showGameButtons()
     isTie = false
     resetPlayer(playerObj)
     resetPlayer(dealerObj)
@@ -52,16 +53,31 @@ function resetPlayer(player) {
 function renderGame() {
     if ((playerObj.hasBlackJack && dealerObj.hasBlackJack) || isTie) {
         message = "Tie"
+        hideGameButtons()
     } else if (!playerObj.hasBlackJack && !playerObj.hasWon && playerObj.isAlive && 
         !dealerObj.hasBlackJack && !dealerObj.hasWon && dealerObj.isAlive 
     ) {
         message = "Do you want to draw a card?"
     } else if (playerObj.hasBlackJack || playerObj.hasWon || !dealerObj.isAlive) {
         message = "You won!"
+        hideGameButtons()
     } else if (!playerObj.isAlive || dealerObj.hasBlackJack || dealerObj.hasWon) {
         message = "You lost :("
+        hideGameButtons()
     } 
     messageEl.textContent = message   
+}
+
+function showGameButtons() {
+    document.getElementById("hit-btn").classList.remove("hidden")
+    document.getElementById("stand-btn").classList.remove("hidden")
+    document.getElementById("start-btn").classList.add("hidden")
+}
+
+function hideGameButtons() {
+    document.getElementById("hit-btn").classList.add("hidden")
+    document.getElementById("stand-btn").classList.add("hidden")
+    document.getElementById("start-btn").classList.remove("hidden")
 }
 
 function getRandomCard() {

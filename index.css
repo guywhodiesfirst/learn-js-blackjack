@@ -11,6 +11,10 @@ h1 {
     color: goldenrod;
 }
 
+.hidden {
+    display: none;
+}
+
 #message-el {
     font-style: italic;
     margin-bottom: 40px;
@@ -34,4 +38,5 @@ button:hover {
     background-color: rgb(173, 132, 27);
     color: rgb(153, 76, 76);
     border-color: 4px solid rgb(67, 122, 101);
+    cursor: pointer;
 }
