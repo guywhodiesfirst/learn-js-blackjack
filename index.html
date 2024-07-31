@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="index.js"></script>
-</head>
-<body>
-    
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p>Player cards: <span id="player-cards"></span></p>
+        <p>Player sum: <span id="player-sum">0</span></p>
+        <p>Dealer cards: <span id="dealer-cards"></span></p>
+        <p>Dealer sum: <span id="dealer-sum">0</span></p>
+        <button onclick="startGame()">NEW GAME</button>
+        <button onclick="hit()">HIT</button>
+        <button onclick="stand()">STAND</button>
+        <script src="index.js"></script>
+    </body>
 </html>
